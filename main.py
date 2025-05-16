@@ -1,4 +1,4 @@
-def adicionar_contato (contatos, nome, telefone, email):
+def adicionar_contato(contatos, nome, telefone, email):
     """adiciona um contato a lista de contatos"""
     contato = {"nome": nome,
                "telefone": telefone,
@@ -6,7 +6,13 @@ def adicionar_contato (contatos, nome, telefone, email):
                "favorito": False
                }
     contatos.append(contato)
-    print(f"contato do/a {nome} adicionado com sucesso")
+    print(f"contato de {nome} adicionado com sucesso")
+    return
+
+def visualizar_contatos(contatos):
+    for i, contato in enumerate(contatos, start=1):
+        favorito = "*" if contato["favorito"] else ""
+        print(f"{i} {contato["nome"]}; {contato["telefone"]}; {contato["email"]} {favorito}")
     return
 
 lista_contatos = []
@@ -28,6 +34,9 @@ while True:
         telefone = input("digite o telefone do contato que voce deseja adicionar")
         email = input("digite o email do contato que voce deseja adicionar")
         adicionar_contato(lista_contatos, nome, telefone, email)
+    
+    elif escolha == "2": 
+        visualizar_contatos(lista_contatos)
     
 
 
