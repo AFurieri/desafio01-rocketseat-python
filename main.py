@@ -65,11 +65,19 @@ def desfavoritar (contatos, indice):
     return
 
 
+def favoritos (contatos):
+    print("\nLista de contatos favoritos:\n")
+    for i, contato in enumerate(contatos, start= 1):
+        if contato["favorito"] == True:
+            print(f"{i}. {contato['nome']} / {contato['telefone']} / {contato['email']}") 
+    return
+
+
 lista_contatos = []
 
 
 while True:
-    print("\nlista de contatos\n")
+    print("\nMenu da lista de contatos\n")
     print("1. adicionar contato ")
     print("2. visualizar lista de contatos")
     print("3. editar um contato")
@@ -101,10 +109,10 @@ while True:
     
     elif escolha == "4":
         visualizar_contatos(lista_contatos)
-        indice = int(input("digite o indice do contato (numero que fica a frente dele) que você deseja alterar o favoritismo: "))
-        print("1. favoritar")
+        indice = int(input("\ndigite o indice do contato (numero que fica a frente dele) que você deseja alterar o favoritismo: "))
+        print("\n1. favoritar")
         print("2. desfavoritar")
-        status = input("digite o que você deseja fazer: ")
+        status = input("\ndigite o que você deseja fazer: ")
 
         if status == "1":
             favoritar(lista_contatos, indice)
@@ -114,6 +122,9 @@ while True:
 
         else:
             print("opção inválida!")
+
+    elif escolha == "5":
+        favoritos(lista_contatos)
 
 
             
