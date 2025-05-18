@@ -75,7 +75,9 @@ def favoritos (contatos):
 
 
 def apagar_contato(contatos, indice):
+    """recebe o indice de um contato específico e o remove da lista de contatos"""
     indice -= 1
+    print(f"{contatos[indice]} removido com sucesso!")
     del contatos[indice]
     return
 
@@ -138,10 +140,14 @@ while True:
         indice = int(input("\ndigite o indice (numero que fica a frente) do contato que voce deseja apagar: "))
         apagar_contato(lista_contatos, indice)
 
+    elif escolha == "7":
+        break
 
+    else:
+        print("Opção inválida!")
             
+print("programa encerrado")
 
-    
 
 
 
